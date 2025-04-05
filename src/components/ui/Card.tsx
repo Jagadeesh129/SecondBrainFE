@@ -8,7 +8,7 @@ interface cardProps {
 
 export const Card = (props: cardProps) => {
   return (
-    <div className="bg-white rounded-md p-4 max-w-72 border border-slate-200 min-h-48 min-w-72">
+    <div className="bg-white rounded-md p-4 max-w-72 border m-1 border-slate-900 min-h-48 min-w-72">
       <div className="flex justify-between">
         <div className="flex items-center gap-2 text-md">
           <div className="text-gray-500">
@@ -28,7 +28,7 @@ export const Card = (props: cardProps) => {
       {props.type == "youtube" ? (
         <div className="pt-4">
           <iframe
-            className="w-full"
+            className="w-full h-full"
             src={props.link.replace("watch","embed")}
             title="YouTube video player"
             frameBorder="0"
@@ -38,8 +38,8 @@ export const Card = (props: cardProps) => {
         </div>
       ) : (
         <div className="">
-          <blockquote className="twitter-tweet">
-            <a className="h-10" href={props.link.replace("x.com","twitter.com")}></a>
+          <blockquote className="twitter-tweet h-10">
+            <a className="" href={props.link.replace("x.com","twitter.com")}></a>
           </blockquote>
         </div>
       )}

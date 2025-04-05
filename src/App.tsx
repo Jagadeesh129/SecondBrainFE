@@ -1,39 +1,17 @@
 import "./App.css";
-import { Button } from "./components/ui/Button";
-import { Card } from "./components/ui/Card";
-import { PlusIcon } from "./icons/PlusIcon";
-import { ShareIcon } from "./icons/ShareIcon";
+import { Dashboard } from "./pages/Dashboard";
+import { Signin } from "./pages/Signin";
+import { Signup } from "./pages/Signup";
+import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
 
 function App() {
-  return (
-    <>
-      <div className="flex justify-end gap-4">
-        <Button
-          variant="primary"
-          startIcon={<ShareIcon />}
-          text="Share Brain" 
-        />
-        <Button
-          variant="secondary"
-          startIcon={<PlusIcon />}
-          text="Add Content"
-        />
-      </div>
-
-      <div className="flex">
-        <Card
-          title="Youtube"
-          link="https://www.youtube.com/watch?v=KfF1W7GWfgo"
-          type="youtube"
-        />
-        <Card
-          title="Twitter"
-          link="https://x.com/taran_adarsh/status/1908050227954606248"
-          type="twitter"
-        />
-      </div>
-    </>
-  );
+  return <BrowserRouter>
+  <Routes>
+    <Route path="/signup" element={<Signup />} />
+    <Route path="/signin" element={<Signin />} />
+    <Route path="/dashboard" element={<Dashboard />} />
+  </Routes>
+  </BrowserRouter>
 }
 
 export default App;
