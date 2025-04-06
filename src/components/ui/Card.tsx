@@ -18,7 +18,9 @@ export const Card = (props: cardProps) => {
         </div>
         <div className="flex gap-1 items-center">
           <div className="text-gray-500">
-            <ShareIcon />
+            <a href={props.link} target="_blank">
+              <ShareIcon />
+            </a>
           </div>
           <div className="text-gray-500">
             <ShareIcon />
@@ -29,7 +31,7 @@ export const Card = (props: cardProps) => {
         <div className="pt-4">
           <iframe
             className="w-full h-full"
-            src={props.link.replace("watch","embed")}
+            src={props.link.replace("watch", "embed").replace("?v=", "/")}
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -38,8 +40,8 @@ export const Card = (props: cardProps) => {
         </div>
       ) : (
         <div className="">
-          <blockquote className="twitter-tweet h-10">
-            <a className="" href={props.link.replace("x.com","twitter.com")}></a>
+          <blockquote className="twitter-tweet">
+            <a href={props.link.replace("x.com", "twitter.com")}></a>
           </blockquote>
         </div>
       )}
